@@ -77,6 +77,6 @@ class MazeToSchematic:
         self.__generate_schematic()
         self.__generate_maze_image_and_solution()
 
-
-m = MazeToSchematic(30,30)
-m.start_generation()
+if __name__ == '__main__':
+    m = MazeToSchematic(30,30)
+    m.start_generation()
