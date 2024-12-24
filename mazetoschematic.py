@@ -37,9 +37,9 @@ class MazeToSchematic:
         for z, row in enumerate(self.grid):
             for x, cell in enumerate(row):
                 block_type = self.wall_block if cell == 1 else self.path_block
-                if self.start == (x,z):
+                if self.start == (z,x):
                     block_type = self.start_block
-                if self.end == (x,z):
+                if self.end == (z,x):
                     block_type = self.end_block
                 for y in range(self.wall_height):
                     for dx in range(self.path_width if cell == 0 else self.wall_thickness):
@@ -63,6 +63,7 @@ class MazeToSchematic:
         if is_solution:
             for (x, y) in self.solution:
                 draw.rectangle([x * cell_size, y * cell_size, (x + 1) * cell_size, (y + 1) * cell_size], fill="blue")
+        img = img.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
         img.save(file_name)
     
     def __generate_schematic(self):
