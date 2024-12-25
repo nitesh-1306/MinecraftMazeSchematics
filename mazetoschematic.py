@@ -1,3 +1,4 @@
+from uuid import uuid4
 from mazelib import Maze
 from PIL import Image, ImageDraw
 from mazelib.generate.Prims import Prims
@@ -7,6 +8,7 @@ from mazelib.solve.BacktrackingSolver import BacktrackingSolver
 
 class MazeToSchematic:
     def __init__(self, height = 25, width = 25):
+        self.name = uuid4()
         self.maze = Maze()
         self.schem = MCSchematic()
 
@@ -67,16 +69,17 @@ class MazeToSchematic:
         img.save(file_name)
     
     def __generate_schematic(self):
-        self.schem.save("","maze_schematic",Version.JE_1_20_1)
+        self.schem.save("",f"{self.name}_maze_schematic",Version.JE_1_20_1)
     
     def __generate_maze_image_and_solution(self):
-        self.__maze_to_png("maze.png")
-        self.__maze_to_png("solution.png", True)
+        self.__maze_to_png(f"{self.name}_maze.png")
+        self.__maze_to_png(f"{self.name}_solution.png", True)
     
     def start_generation(self):
         self.__start_schematic_generation()
         self.__generate_schematic()
         self.__generate_maze_image_and_solution()
+        return self.name
 
 if __name__ == '__main__':
     m = MazeToSchematic(30,30)
