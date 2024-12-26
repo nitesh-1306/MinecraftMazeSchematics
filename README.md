@@ -12,6 +12,18 @@ A Flask web application that generates mazes and converts them into Minecraft sc
   - PNG visualization of the solution
   - Minecraft schematic file (.schem)
 
+## Examples
+
+### Maze (30x30)
+<img src="./examples/0add1d02-fa5b-44f0-8516-0a4546833b02_maze.png" width="200">
+
+### Maze Solution
+<img src="./examples/0add1d02-fa5b-44f0-8516-0a4546833b02_solution.png" width="200">
+
+
+[Download Schematic](/examples/0add1d02-fa5b-44f0-8516-0a4546833b02_maze_schematic.schem)
+
+
 ## Installation
 
 1. Clone this repository:
