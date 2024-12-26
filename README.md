@@ -62,6 +62,7 @@ python app.py
 
 ```
 maze-schematic-generator/
+├── examples/
 ├── app.py
 ├── requirements.txt
 ├── static/
@@ -74,6 +75,7 @@ maze-schematic-generator/
 │   └── error.html
 └── utils/
     ├── maze_generator.py
+    ├── cloud_storage.py
     └── schematic_converter.py
 ```
 
