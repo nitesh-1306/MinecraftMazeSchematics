@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 150, 0.6), rgba(0, 0, 30, 0.6)), 
+        url('https://steamuserimages-a.akamaihd.net/ugc/2310974141604980016/B4EF3A7A2D1772DE26B1A6F51CE33A04FD8BB917/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false') no-repeat center center fixed;
+    background-size: cover;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.error-container {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(36, 36, 36, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    max-width: 90%;
+    width: 400px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.icon {
+    font-size: 48px;
+    margin-bottom: 1rem;
+    color: #ff4757;
+}
+
+h1 {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 0 1rem 0;
+}
+
+p {
+    color: #a0a0a0;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.5;
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
