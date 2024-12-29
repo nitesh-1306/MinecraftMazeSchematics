@@ -1,3 +1,4 @@
+import random
 from uuid import uuid4
 from mazelib import Maze
 from PIL import Image, ImageDraw
@@ -7,7 +8,7 @@ from mazelib.solve.BacktrackingSolver import BacktrackingSolver
 
 
 class MazeToSchematic:
-    def __init__(self, height = 25, width = 25):
+    def __init__(self, height = 25, width = 25, wall_blocks = None):
         self.name = uuid4()
         self.maze = Maze()
         self.schem = MCSchematic()
@@ -18,7 +19,7 @@ class MazeToSchematic:
         self.solution = self.maze.solutions[0]
         self.grid = self.maze.grid
 
-        self.wall_block = "minecraft:stone"
+        self.wall_blocks = ["minecraft:stone"] if not wall_blocks else wall_blocks
         self.path_block = "minecraft:air"
         self.start_block = "minecraft:gold_block"
         self.end_block = "minecraft:emerald_block"
@@ -38,7 +39,7 @@ class MazeToSchematic:
     def __start_schematic_generation(self):
         for z, row in enumerate(self.grid):
             for x, cell in enumerate(row):
-                block_type = self.wall_block if cell == 1 else self.path_block
+                block_type = random.choice(self.wall_blocks) if cell == 1 else self.path_block
                 if self.start == (z,x):
                     block_type = self.start_block
                 if self.end == (z,x):
