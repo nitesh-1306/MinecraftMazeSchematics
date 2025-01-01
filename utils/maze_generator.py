@@ -1,4 +1,3 @@
-import random
 from uuid import uuid4
 from mazelib import Maze
 from PIL import Image, ImageDraw
@@ -53,7 +52,7 @@ class MazeGenerator:
     
     def generate_maze(self):
         self.__generate_maze_image_and_solution()
-        return self.name, self.grid
+        return self.name, self.maze
 
 if __name__ == '__main__':
     m = MazeGenerator(30,30)
