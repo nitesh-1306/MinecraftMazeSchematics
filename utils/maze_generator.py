@@ -7,7 +7,7 @@ from mazelib.solve.BacktrackingSolver import BacktrackingSolver
 
 
 class MazeGenerator:
-    def __init__(self, height = 25, width = 25, wall_blocks = None):
+    def __init__(self, height = 25, width = 25):
         self.name = uuid4()
         self.maze = Maze()
 
@@ -17,15 +17,8 @@ class MazeGenerator:
         self.solution = self.maze.solutions[0]
         self.grid = self.maze.grid
 
-        self.wall_blocks = ["minecraft:stone"] if not wall_blocks else wall_blocks
-        self.path_block = "minecraft:air"
-        self.start_block = "minecraft:gold_block"
-        self.end_block = "minecraft:emerald_block"
         self.start = self.maze.start
         self.end = self.maze.end
-        self.wall_height = 4
-        self.wall_thickness = 2
-        self.path_width = 2
     
     def __initiate_maze(self):
         self.maze.solver = BacktrackingSolver()
